@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="ISO-8859-1">
+<title>AngularJS Tutorial</title> 
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js"></script>
+</head>
+
+<body ng-app="myapp">
+
+<!-- view  will have the "ng-controller" directive which tells angular js which controller to use with this view -->
+<div ng-controller="HelloController" >
+ <h2>Welcome {{helloTo.title}} to the world of AngularJS!</h2>
+</div>
+ 
+ <!-- register a controller function named HelloController to the angular module named "myapp" -->
+ <script>
+ angular.module("myapp", [])
+ .controller("HelloController", function($scope) {
+ $scope.helloTo = {};
+ $scope.helloTo.title = "DarioTek";
+ });
+ </script>
+ 
+ <!--  
+ 1. add the <script tag that contains the reference to angular.min.js
+ 2. add the "ng-app" directive/tag to the body and give it a name
+ 3. register a controller function named HelloController to the angular module named "myapp"
+    The $scope parameter model is passed to the controller function. The controller
+    function adds a helloTo JavaScript object, and in that object it adds a title field.
+ -->
+</body>
+</html>
